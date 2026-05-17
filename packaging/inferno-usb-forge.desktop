@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=INFERNO USB Forge
+Comment=Professional bootable USB creator for Linux
+Exec=inferno-usb-forge %U
+Icon=inferno-usb-forge
+Type=Application
+Categories=Utility;System;
+Keywords=usb;iso;boot;flash;linux;bootable;
+StartupWMClass=inferno-usb-forge
+MimeType=application/x-cd-image;application/x-iso9660-image;

@@ -1,0 +1,13 @@
+// /etc/polkit-1/rules.d/99-inferno-usb.rules
+// Allows users in the "disk" group to manage block devices via udisks2
+// without a password prompt when using INFERNO USB Forge.
+polkit.addRule(function(action, subject) {
+    if ((action.id == "org.freedesktop.udisks2.open-device" ||
+         action.id == "org.freedesktop.udisks2.filesystem-unmount-others" ||
+         action.id == "org.freedesktop.udisks2.drive-eject" ||
+         action.id == "org.freedesktop.udisks2.eject-media") &&
+        subject.local && subject.active &&
+        subject.isInGroup("disk")) {
+        return polkit.Result.YES;
+    }
+});
